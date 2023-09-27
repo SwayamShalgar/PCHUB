@@ -1,0 +1,258 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<html lang="en">
+
+<head>
+    <title>PCHUB</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,500i,700,800i" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</head>
+
+<style>
+    body {
+        background-color: rgb(247, 240, 240);
+    }
+
+    #vid {
+        width: 100%;
+        height: 50%;
+        border: 2px solid red;
+    }
+
+    video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        /* position: fixed; */
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-md-top" data-bs-theme="light" id="nav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">PC HUB</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Login or SignUp
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#loginModal">Login</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#signupModal">Signup</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="contact.html">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+                <form class="d-flex my-2" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- loginModal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="loginModalLabel">Login to PCHUB</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">*Email address</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">*Password</label>
+                            <input type="password" class="form-control" id="pass">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
+                            <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
+                        </div>
+                        <button type="submit" onclick="login()" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- signupModal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="signupModalLabel">SignUp to PCHUB</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">*Name</label>
+                            <input type="name" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">Enter Full Name</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">*Confirm Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
+                            <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
+                        </div>
+                        <button type="submit" onclick="signup()" class="btn btn-primary">Sign Up</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="vid">
+        <video autoplay loop muted
+            src="https://pixabay.com/videos/business-office-laptop-107425/">
+        </video>
+    </div>
+
+    <div class="container my-5">
+        <a style="color: black; text-decoration: none;"
+            href="https://www.amazon.in/Acer-15-6-inch-Laptop-Graphics-A515-56/dp/B099ZZX3QW">
+            <div class="row featurette d-flex justify-content-center align-items-center">
+                <div class="col-md-7 order-md-2">
+                    <h1 class="featurette-heading fw-normal lh-1"><b>ACER ASPIRE</b><span
+                            class="text-body-secondary"></span></h1>
+                    <p class="fs-4">Intel 11th Gen Core i5 15.6 inches Full HD Thin and Light Laptop- (8GB/1TB
+                        HDD/Windows 10 Home/Iris Xe Graphics/Pure Silver/1.65Kg), A515-56, Large</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                        height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+                        preserveAspectRatio="xMidYMid slice" focusable="false"
+                        src="https://5.imimg.com/data5/SELLER/Default/2022/5/RC/XR/IB/152489531/715ht-tvp1s-sl1500-.jpg"
+                        alt="">
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="container my-5">
+        <a href="https://www.amazon.ca/VivoBook-i3-1005G1-Keyboard-Fingerprint-F512JA-AS34/dp/B0869L1326"
+            style="text-decoration: none; color: black;">
+            <div class="row featurette d-flex justify-content-center align-items-center">
+                <div class="col-md-7 order-md-2">
+                    <h1 class="featurette-heading fw-normal lh-1"><b>ASUS VIVOBOOK 15</b><span
+                            class="text-body-secondary"></span></h1>
+                    <p class="fs-4">Thin and Light Laptop, 15.6” FHD Display, Intel i3-1005G1 CPU, 8GB RAM, 128GB SSD,
+                        Backlit Keyboard, Fingerprint, Windows 10 Home in S Mode, Slate Gray, F512JA-AS34
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                        height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+                        preserveAspectRatio="xMidYMid slice" focusable="false"
+                        src="https://images-cdn.ubuy.co.in/633aabf17be11725673db585-asus-vivobook-f512-thin-and-lightweight.jpg"
+                        alt="">
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="container my-5">
+        <a href="https://www.amazon.in/ASUS-Zenbook-13-3-33-78-2-8K/dp/B0B3F16W62"
+            style="text-decoration: none; color: black;">
+            <div class="row featurette d-flex justify-content-center align-items-center">
+                <div class="col-md-7  order-md-2">
+                    <h1 class="featurette-heading fw-normal lh-1"><b>ASUS ZENBOOK S13</b><span
+                            class="text-body-secondary"></span></h1>
+                    <p class="fs-4">13.3" (33.78 cm) 2.8K OLED 16:10 Touch, AMD Ryzen 7 6800U, Integrated Graphics, Thin
+                        and Light Laptop (16GB/1TB SSD/Windows 11/Office 2021/Celadon/1.10 kg), UM5302TA-LX702WS</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                        height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+                        preserveAspectRatio="xMidYMid slice" focusable="false"
+                        src="https://www.teckpot.com/30301-large_default/asus-zenbook-s-13-oled-core-i7-1355u-thin-light-laptop133-16gb-1tb-ssd-win-11-13th-gen-ponder-blue.jpg"
+                        alt="">
+                </div>
+            </div>
+        </a>
+    </div>
+
+
+    <div class="container my-5">
+        <a href="https://p-yo-www-amazon-in-kalias.amazon.in/Notebook-Resolution-i5-11300H-15-6-inch-Fingerprint/dp/B098XLXDRS"
+            style="text-decoration: none; color: black;">
+            <div class="row featurette d-flex justify-content-center align-items-center">
+                <div class="col-md-7  order-md-2">
+                    <h1 class="featurette-heading fw-normal lh-1"><b>MI BOOK ULTRA</b><span
+                            class="text-body-secondary"></span></h1>
+                    <p class="fs-4">11th Gen Intel Core i5-11320H Thin & Light (8GB/512GB SSD/Iris Xe Graphics/15.6"
+                        3.2K Resolution/90Hz Display/Windows 11/Thunderbolt 4/MS Office'21/Fingerprint Sensor/1.7 Kg)
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                        height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+                        preserveAspectRatio="xMidYMid slice" focusable="false"
+                        src="https://ampro.in/wp-content/uploads/2023/07/Xiaomi-Notebook-Pro-1-3.jpg" alt="">
+                </div>
+            </div>
+        </a>
+    </div>
+</body>
+
+</html>

@@ -56,7 +56,7 @@
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle disabled" aria-disabled="true" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Login or SignUp
                         </a>
@@ -82,114 +82,35 @@
             </div>
         </div>
     </nav>
-
-    <!-- loginModal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="loginModalLabel">Login to PCHUB</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">*Email address</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">*Password</label>
-                            <input type="password" class="form-control" id="pass">
-                        </div>
-                        <div class="mb-3 form-check">
-                            <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
-                            <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
-                        </div>
-                        <button type="submit" onclick="login()" class="btn btn-primary">Login</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- signupModal -->
-    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="signupModalLabel">SignUp to PCHUB</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">*Name</label>
-                            <input type="name" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">Enter Full Name</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">*Confirm Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3 form-check">
-                            <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
-                            <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
-                        </div>
-                        <button type="submit" onclick="signup()" class="btn btn-primary">Sign Up</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="vid">
-        <video autoplay loop muted
-            src="https://pixabay.com/videos/business-office-laptop-107425/">
+        <div id="vid">
+        <video autoplay loop muted src="micro.mp4">
         </video>
     </div>
 
     <div class="container my-5">
         <a style="color: black; text-decoration: none;"
-            href="https://www.amazon.in/Acer-15-6-inch-Laptop-Graphics-A515-56/dp/B099ZZX3QW">
+            href="https://www.amazon.in/Microsoft-Touchscreen-RadeonTM-Graphics-Platinum/dp/B0933L1RWD">
             <div class="row featurette d-flex justify-content-center align-items-center">
                 <div class="col-md-7 order-md-2">
-                    <h1 class="featurette-heading fw-normal lh-1"><b>ACER ASPIRE</b><span
+                    <h1 class="featurette-heading fw-normal lh-1"><b>MICROSOFT SURFACE 4</b><span
                             class="text-body-secondary"></span></h1>
-                    <p class="fs-4">Intel 11th Gen Core i5 15.6 inches Full HD Thin and Light Laptop- (8GB/1TB
-                        HDD/Windows 10 Home/Iris Xe Graphics/Pure Silver/1.65Kg), A515-56, Large</p>
+                    <p class="fs-4">Microsoft Surface Laptop 4 AMD Ryzen 5 4680U 13.5 inches Touchscreen Laptop
+                        (8GB/256GB SSD/Windows 11 Home /Radeon Graphics/Platinum/1.265 kg) - 5PB-00023</p>
                 </div>
                 <div class="col-md-5">
                     <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
                         height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
                         preserveAspectRatio="xMidYMid slice" focusable="false"
-                        src="https://5.imimg.com/data5/SELLER/Default/2022/5/RC/XR/IB/152489531/715ht-tvp1s-sl1500-.jpg"
+                        src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/SurfaceLaptop4playvideo_tbmnl_en-ae?scl=1"
                         alt="">
                 </div>
             </div>
         </a>
     </div>
 
-    <div class="container my-5">
+    <hr>
+
+    <div class="container my-5 width-1000">
         <a href="https://www.amazon.ca/VivoBook-i3-1005G1-Keyboard-Fingerprint-F512JA-AS34/dp/B0869L1326"
             style="text-decoration: none; color: black;">
             <div class="row featurette d-flex justify-content-center align-items-center">
@@ -210,6 +131,7 @@
             </div>
         </a>
     </div>
+    <hr>
 
     <div class="container my-5">
         <a href="https://www.amazon.in/ASUS-Zenbook-13-3-33-78-2-8K/dp/B0B3F16W62"
@@ -231,7 +153,7 @@
             </div>
         </a>
     </div>
-
+<hr>
 
     <div class="container my-5">
         <a href="https://p-yo-www-amazon-in-kalias.amazon.in/Notebook-Resolution-i5-11300H-15-6-inch-Fingerprint/dp/B098XLXDRS"

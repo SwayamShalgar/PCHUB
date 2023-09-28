@@ -1,0 +1,235 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<html lang="en">
+
+<head>
+    <title>PCHUB</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,500i,700,800i" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</head>
+
+<style>
+    body {
+        background-color: rgb(247, 240, 240);
+    }
+
+    #vid {
+        width: 100%;
+        height: 50%;
+        border: 2px solid red;
+    }
+
+    video {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        /* position: fixed; */
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-md-top" data-bs-theme="light" id="nav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">PC HUB</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle disabled" aria-disabled="true" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Login or SignUp
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#loginModal">Login</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#signupModal">Signup</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="contact.html">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+                <form class="d-flex my-2" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- loginModal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="loginModalLabel">Login to PCHUB</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">*Email address</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">*Password</label>
+                            <input type="password" class="form-control" id="pass">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
+                            <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
+                        </div>
+                        <button type="submit" onclick="login()" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- signupModal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="signupModalLabel">SignUp to PCHUB</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">*Name</label>
+                            <input type="name" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">Enter Full Name</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">*Confirm Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
+                            <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
+                        </div>
+                        <button type="submit" onclick="signup()" class="btn btn-primary">Sign Up</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="vid">
+        <video autoplay loop muted
+            src="https://m.media-amazon.com/images/S/aplus-media/vc/e6eb345e-2afc-48b0-8092-db2bb2229f60.mp4">
+        </video>
+    </div>
+
+    <div class="container my-5">
+        <a style="color: black; text-decoration: none;"
+            href="https://www.amazon.in/Sony-PS5-Standard-DualSense-bundle/dp/B0BSNFLLRK/ref=asc_df_B0BSNFLLRK/?tag=googleshopdes-21&linkCode=df0&hvadid=666508817983&hvpos=&hvnetw=g&hvrand=12560945976910906287&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1007786&hvtargid=pla-2195368025688&gclid=Cj0KCQjwpc-oBhCGARIsAH6ote-iJEUmFQ0qs6_6VCI4eDZ7MqNKAEL3iIHpGggHjRHC60TvB4Bz_E8aAn11EALw_wcB&th=1">
+            <div class="row featurette d-flex justify-content-center align-items-center">
+                <div class="col-md-7 order-md-2">
+                    <h1 class="featurette-heading fw-normal lh-1"><b>Sony PS5 Standard DualSense bundle</b><span
+                            class="text-body-secondary"></span></h1>
+                    <p class="fs-4">AMD Radeon RDNA 2-based graphics engine 10.28 Teraflops 36 CUs @ 2.23GHz Ray Tracing
+                        Acceleration 16GB GDDR6/256-bit 448GB/s Bandwidth Custom 825GB SSD 5.5GB/s Read Bandwidth (Raw)
+                        Typical 8-9GB/s (Compressed) NVMe SSD slot</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                        height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+                        preserveAspectRatio="xMidYMid slice" focusable="false"
+                        src="https://images.indianexpress.com/2020/06/feature-3.jpg" alt="">
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="container my-5">
+        <a href="https://www.amazon.in/Xbox-Series-S/dp/B08J89D6BW?th=1" style="text-decoration: none; color: black;">
+            <div class="row featurette d-flex justify-content-center align-items-center">
+                <div class="col-md-7 order-md-2">
+                    <h1 class="featurette-heading fw-normal lh-1"><b>Xbox Series S</b><span class="text-body-secondary">
+                        </span></h1>
+                    <p class="fs-4">Custom RDNA 2 20 CUs @ 1.565 GHz 4 TFLOPS 10 GB GDDR6 8 GB with
+                        128-bit bus (224 GB/s) and 2 GB with 32-bit bus (56 GB/s) 512 GB PCIe Gen 4 custom NVMe SSD
+                        2.4 GB/s raw, 4.8 GB/s compressed 0.5–2 TB expansion card (rear)</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                        height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+                        preserveAspectRatio="xMidYMid slice" focusable="false"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD4neZeCWAKolVUnLQgZoY3v5hpN3GOUQDlQ&usqp=CAU"
+                        alt="">
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="container my-5">
+        <a href="https://www.amazon.in/Nintendo-Switch-neon-blue-Joy%E2%80%91/dp/B07WH14NYF"
+            style="text-decoration: none; color: black;">
+            <div class="row featurette d-flex justify-content-center align-items-center">
+                <div class="col-md-7  order-md-2">
+                    <h1 class="featurette-heading fw-normal lh-1"><b>Nintendo</b><span
+                            class="text-body-secondary"></span></h1>
+                    <p class="fs-4">Version 2 Switch with Joy-Con - Version 2 - HAC-001(-01), Neon Red and Neon Blue</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
+                        height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
+                        preserveAspectRatio="xMidYMid slice" focusable="false"
+                        src="https://i.gadgets360cdn.com/products/large/1549526400_635_nintendo_switch_db.jpg?downsize=*:360"
+                        alt="">
+                </div>
+            </div>
+        </a>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

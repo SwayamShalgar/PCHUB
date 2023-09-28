@@ -56,7 +56,7 @@
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle disabled" aria-disabled="true" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Login or SignUp
                         </a>
@@ -82,89 +82,9 @@
             </div>
         </div>
     </nav>
-
-    <!-- loginModal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="loginModalLabel">Login to PCHUB</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">*Email address</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">*Password</label>
-                            <input type="password" class="form-control" id="pass">
-                        </div>
-                        <div class="mb-3 form-check">
-                            <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
-                            <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
-                        </div>
-                        <button type="submit" onclick="login()" class="btn btn-primary">Login</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- signupModal -->
-    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="signupModalLabel">SignUp to PCHUB</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">*Name</label>
-                            <input type="name" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">Enter Full Name</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">*Confirm Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3 form-check">
-                            <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
-                            <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
-                        </div>
-                        <button type="submit" onclick="signup()" class="btn btn-primary">Sign Up</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div id="vid">
         <video autoplay loop muted
-            src="https://media.istockphoto.com/id/1393551364/video/successful-young-female-gamer-putting-on-headphones-and-winning-in-a-video-game-on-personal.mp4?s=mp4-640x640-is&k=20&c=h21xGIQBoDuEnklnqFInmJcjAG1yvyKk7V1-dDB9N6Q=">
+            src="https://cdn.cloudflare.steamstatic.com/steam/apps/256875134/movie480_vp9.webm?t=1647525311">
         </video>
     </div>
 

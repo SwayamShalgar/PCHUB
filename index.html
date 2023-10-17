@@ -1,14 +1,9 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 <html lang="en">
 
 <head>
   <title>PCHUB</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,500i,700,800i" rel="stylesheet">
@@ -19,24 +14,25 @@
     crossorigin="anonymous"></script>
 </head>
 
-
 <body>
   <html lang="en">
-
-  <head>
-    <title>PCHUB</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,500i,700,800i" rel="stylesheet">
-  </head>
-
-  <body>
-
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="nav" data-bs-theme="light">
+  <style>
+    :root {
+      --primary-color: white;
+      --secondary-color: black;
+    }
+    .dark-mode {
+      --primary-color: #111;
+      --secondary-color: white;
+    }
+    body {
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+    }
+  </style>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-md-top" id="nav" data-bs-theme="light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">PC HUB</a>
+        <a class="navbar-brand" href="index.html">PC HUB</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -68,11 +64,11 @@
             </li>
           </ul>
 
-          <button type="button" class="btn mx-2" data-bs-toggle="button" onclick="dark()">Toggle button</button>
+          <button type="button" class="btn mx-2 btn-dark" id="dark" data-bs-toggle="button">Dark Mode</button>
 
           <form class="d-flex my-2" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <input class="form-control me-2" type="search" id="scr" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit" onclick="search()"><a id="get" style="text-decoration: none;" href="">Search</a></button>
           </form>
         </div>
       </div>
@@ -89,24 +85,22 @@
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">*Email address</label>
+                <label for="email" class="form-label">*Email address</label>
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
               </div>
               <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">*Password</label>
+                <label for="pass" class="form-label">*Password</label>
                 <input type="password" class="form-control" id="pass">
+                <div id="passHelp" class="form-text"></div>
               </div>
               <div class="mb-3 form-check">
-                <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
-                <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
               </div>
               <button type="submit" onclick="login()" class="btn btn-primary">Login</button>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
           </div>
         </div>
       </div>
@@ -123,33 +117,35 @@
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">*Name</label>
-                <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="name1" class="form-label">*Name</label>
+                <input type="name" class="form-control" id="name1" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">Enter Full Name</div>
               </div>
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="phone" class="form-label">*Phone No</label>
+                <input type="text" class="form-control" id="phone" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">Enter Phone Number</div>
+              </div>
+              <div class="mb-3">
+                <label for="email1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email1" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
               </div>
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <input type="password" class="form-control" id="signpass1">
               </div>
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">*Confirm Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <input type="password" class="form-control" id="signpass2">
               </div>
               <div class="mb-3 form-check">
-                <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
-                <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
               </div>
               <button type="submit" onclick="signup()" class="btn btn-primary">Sign Up</button>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
           </div>
         </div>
       </div>
@@ -163,9 +159,9 @@
             <h5>Best PC online Store</h5>
             <p>Best Discounts on Gaming Pc, laptops and Consoles</p>
             <button class="btn btn-danger"><a href="gaming.html" style="text-decoration: none; color: white;">Gaming</a></button>
-            <button class="btn btn-success">consoles</button>
-            <button class="btn btn-primary"><a href="laptops.html" style="text-decoration: none; color: white;">Thin and Light</a></button>
-            <button class="btn btn-secondary">MAC</button>
+            <button class="btn btn-success"><a href="console.html" style="text-decoration: none; color: white;">consoles</a></button>
+            <button class="btn btn-primary"><a href="laptop.html" style="text-decoration: none; color: white;">Thin and Light</a></button>
+            <button class="btn btn-secondary"><a href="mac.html" style="text-decoration: none; color: white;">MAC</a></button>
           </div>
         </div>
         <div class="carousel-item">
@@ -175,7 +171,7 @@
             <p>MSI, ACER, HP, LENOVO and many more</p>
             <button class="btn btn-danger"><a href="gaming.html" style="text-decoration: none; color: white;">Gaming</a></button>
             <button class="btn btn-success"><a href="console.html" style="text-decoration: none; color: white;"> consoles</a></button>
-            <button class="btn btn-primary"><a href="laptops.html" style="text-decoration: none; color: white;">Thin and Light</a></button>
+            <button class="btn btn-primary"><a href="laptop.html" style="text-decoration: none; color: white;">Thin and Light</a></button>
             <button class="btn btn-secondary"><a href="mac.html" style="text-decoration: none; color: white;">MAC</a></button>
           </div>
         </div>
@@ -187,9 +183,9 @@
             <h5>Enter the world of MAC</h5>
             <p>Feel the power of M-Series Chipset</p>
             <button class="btn btn-danger"><a href="gaming.html" style="text-decoration: none; color: white;">Gaming</a></button>
-            <button class="btn btn-success">consoles</button>
-            <button class="btn btn-primary"><a href="laptops.html" style="text-decoration: none; color: white;">Thin and Light</a></button>
-            <button class="btn btn-secondary">MAC</button>
+            <button class="btn btn-success"><a href="console.html" style="text-decoration: none; color: white;">consoles</a></button>
+            <button class="btn btn-primary"><a href="laptop.html" style="text-decoration: none; color: white;">Thin and Light</a></button>
+            <button class="btn btn-secondary"><a href="mac.html" style="text-decoration: none; color: white;">MAC</a></button>
           </div>
         </div>
         <div class="carousel-caption d-none d-md-block">
@@ -217,7 +213,7 @@
               <h3 class="mb-0">Greate Experience</h3>
               <div class="mb-1 text-body-secondary">1 year onsite warrenty</div>
               <p class="card-text mb-auto">Providing the best Quality and service all over India</p>
-              <a href="laptops.html" class="icon-link gap-1 icon-link-hover stretched-link">
+              <a href="laptop.html" class="icon-link gap-1 icon-link-hover stretched-link">
                 Check Out
                 <svg class="bi">
                   <use xlink:href="#chevron-right"></use>

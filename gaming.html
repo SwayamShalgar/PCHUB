@@ -1,33 +1,44 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 <html lang="en">
 
 <head>
-    <title>PCHUB</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,500i,700,800i" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+  <title>PCHUB</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,500i,700,800i" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
 </head>
 
 <style>
-    body {
-        background-color: rgb(247, 240, 240);
+    :root {
+      --primary-color: white;
+      --secondary-color: black;
     }
+    .lap{
+        text-decoration: none;
+        color: var(--secondary-color);
+    }
+    .dark-mode {
+      --primary-color: #111;
+      --secondary-color: white;
+    }
+    body {
+      background-color: var(--primary-color);
+      color: var(--secondary-color);
+    }
+    /* body {
+        background-color: rgb(247, 240, 240);
+    } */
 
     #vid {
         width: 100%;
         height: 50%;
-        border: 2px solid red;
+        /* border: 2px solid red; */
     }
 
     video {
@@ -36,12 +47,14 @@
         object-fit: cover;
         /* position: fixed; */
     }
+    
+  
 </style>
 
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-md-top" data-bs-theme="light" id="nav">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">PC HUB</a>
+            <a class="navbar-brand" href="index.html">PC HUB</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -50,7 +63,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
@@ -75,10 +88,11 @@
                         <a class="nav-link" href="contact.html">Contact Us</a>
                     </li>
                 </ul>
+                <button type="button" class="btn mx-2 btn-dark" id="dark" data-bs-toggle="button">Dark Mode</button>
                 <form class="d-flex my-2" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                    <input class="form-control me-2" type="search" id="scr" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" onclick="search()"><a id="get" style="text-decoration: none;" href="">Search</a></button>
+                  </form>
             </div>
         </div>
     </nav>
@@ -87,9 +101,9 @@
             src="https://cdn.cloudflare.steamstatic.com/steam/apps/256875134/movie480_vp9.webm?t=1647525311">
         </video>
     </div>
-
+<hr>
     <div class="container my-5">
-        <a style="color: black; text-decoration: none;"
+        <a class="lap"
             href="https://www.amazon.in/ASUS-15-6-inch-i7-12700H-RTX-3050-FX507ZE-HN038W/dp/B09TTFTFQH/ref=sr_1_6?adgrpid=57384816885&ext_vrnc=hi&hvadid=294133896605&hvdev=c&hvlocphy=1007786&hvnetw=g&hvqmt=e&hvrand=2054081027738671188&hvtargid=kwd-936275203561&hydadcr=25660_1901002&keywords=asus+tuf+f15&qid=1695823341&sr=8-6">
             <div class="row featurette d-flex justify-content-center align-items-center">
                 <div class="col-md-7 order-md-2">
@@ -108,9 +122,9 @@
             </div>
         </a>
     </div>
-
+<hr>
     <div class="container my-5">
-        <a href="https://www.amazon.in/HP-Graphics-15-6-inch-Backlit-fb0146AX/dp/B0C9JN4VMV/ref=sr_1_3?crid=39TRI46FTM2U1&keywords=hp+victus+ryzen+5+5600h&qid=1695824031&sprefix=hp+vi%2Caps%2C339&sr=8-3" style="text-decoration: none; color: black;">
+        <a class="lap" href="https://www.amazon.in/HP-Graphics-15-6-inch-Backlit-fb0146AX/dp/B0C9JN4VMV/ref=sr_1_3?crid=39TRI46FTM2U1&keywords=hp+victus+ryzen+5+5600h&qid=1695824031&sprefix=hp+vi%2Caps%2C339&sr=8-3">
         <div class="row featurette d-flex justify-content-center align-items-center">
             <div class="col-md-7 order-md-2">
                 <h1 class="featurette-heading fw-normal lh-1"><b>HP VICTUS GAMING</b><span
@@ -129,9 +143,9 @@
         </div>
     </a>
     </div>
-
+<hr>
     <div class="container my-5">
-        <a href="https://www.amazon.in/ASUS-Strix-Ryzen-Octa-R7-4800H/dp/B0BLQX4MC7" style="text-decoration: none; color: black;">
+        <a class="lap" href="https://www.amazon.in/ASUS-Strix-Ryzen-Octa-R7-4800H/dp/B0BLQX4MC7">
         <div class="row featurette d-flex justify-content-center align-items-center">
             <div class="col-md-7  order-md-2">
                 <h1 class="featurette-heading fw-normal lh-1"><b>ASUS ROG STRIX G15</b><span
@@ -150,10 +164,10 @@
         </div>
     </a>
     </div>
-
+<hr>
 
     <div class="container my-5">
-        <a href="https://www.amazon.in/Acer-Display-Gaming-Graphics-GeForce/dp/B09FK41K3C" style="text-decoration: none; color: black;">
+        <a class="lap" href="https://www.amazon.in/Acer-Display-Gaming-Graphics-GeForce/dp/B09FK41K3C">
         <div class="row featurette d-flex justify-content-center align-items-center">
             <div class="col-md-7  order-md-2">
                 <h1 class="featurette-heading fw-normal lh-1"><b>ACER NITOR 5</b><span
@@ -172,6 +186,8 @@
         </div>
     </a>
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

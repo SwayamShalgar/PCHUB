@@ -51,8 +51,8 @@
                 Login or SignUp
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
-                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">Signup</a></li>
+                <li><a class="dropdown-item" href="Login.html">Login</a></li>
+                <li><a class="dropdown-item" href="Login.html">Signup</a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
@@ -73,83 +73,6 @@
         </div>
       </div>
     </nav>
-
-    <!-- loginModal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="loginModalLabel">Login to PCHUB</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="mb-3">
-                <label for="email" class="form-label">*Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-              </div>
-              <div class="mb-3">
-                <label for="pass" class="form-label">*Password</label>
-                <input type="password" class="form-control" id="pass">
-                <div id="passHelp" class="form-text"></div>
-              </div>
-              <div class="mb-3 form-check">
-              </div>
-              <button type="submit" onclick="login()" class="btn btn-primary">Login</button>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- signupModal -->
-    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="signupModalLabel">SignUp to PCHUB</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="mb-3">
-                <label for="name1" class="form-label">*Name</label>
-                <input type="name" class="form-control" id="name1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">Enter Full Name</div>
-              </div>
-              <div class="mb-3">
-                <label for="phone" class="form-label">*Phone No</label>
-                <input type="text" class="form-control" id="phone" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">Enter Phone Number</div>
-              </div>
-              <div class="mb-3">
-                <label for="email1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="signpass1">
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">*Confirm Password</label>
-                <input type="password" class="form-control" id="signpass2">
-              </div>
-              <div class="mb-3 form-check">
-              </div>
-              <button type="submit" onclick="signup()" class="btn btn-primary">Sign Up</button>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade " data-bs-ride="carousel">
       <div class="carousel-inner">

@@ -1,13 +1,7 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-
 <html lang="en">
 
 <head>
-  <title>Navbar</title>
+  <title>PCHUB</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -31,11 +25,26 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,500i,700,800i" rel="stylesheet">
 </head>
+
+<style>
+  :root {
+    --primary-color: white;
+    --secondary-color: black;
+  }
+  .dark-mode {
+    --primary-color: #111;
+    --secondary-color: white;
+  }
+  body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+  }
+</style>
   <body>
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-md-top"  data-bs-theme="light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">PC HUB</a>
+        <a class="navbar-brand" href="index.html">PC HUB</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -62,114 +71,39 @@
               <a class="nav-link active" href="#">Contact Us</a>
             </li>
           </ul>
+          <button type="button" class="btn mx-2 btn-dark" id="dark" data-bs-toggle="button">Dark Mode</button>
           <form class="d-flex my-2" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <input class="form-control me-2" type="search" id="scr" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit" onclick="search()"><a id="get" style="text-decoration: none;" href="">Search</a></button>
           </form>
-          <!-- <button class="btn btn-danger ml-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-          <button class="btn btn-danger ml-2" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button> -->
         </div>
       </div>
     </nav>
 
-    <!-- loginModal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="loginModalLabel">Login to PCHUB</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">*Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">*Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-              </div>
-              <div class="mb-3 form-check">
-                <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
-                <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
-              </div>
-              <button type="submit" onclick="login()" class="btn btn-primary">Login</button>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- signupModal -->
-    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="signupModalLabel">SignUo to PCHUB</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">*Name</label>
-                <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">Enter Full Name</div>
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">*Confirm Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-              </div>
-              <div class="mb-3 form-check">
-                <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
-                <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
-              </div>
-              <button type="submit" onclick="signup()" class="btn btn-primary">SignUp</button>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-
     <div class="container my-4">
         <h2>Contact Us</h2>
         <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">*Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          <label for="userName" class="form-label">*Name</label>
+          <input type="email" class="form-control" id="userName">
+        </div>
+        <div class="mb-3">
+            <label for="ContactEmail" class="form-label">*Email address</label>
+            <input type="email" class="form-control" id="ContactEmail" placeholder="name@example.com">
           </div>
 
-          <label for="queryBox" class="form-label">*Select Query</label>
-          <select class="form-select mb-3" id="queryBox" aria-label="Default select example">
-            <option selected>Open this select menu</option>
+          <label for="selectOpt" class="form-label">*Select Query</label>
+          <select class="form-select mb-3" id="selectOpt" placeholder="Open this select menu" aria-label="Default select example">
+            <option selected>Other</option>
             <option value="1">Warrenty Consern</option>
             <option value="2">Laptop Services</option>
             <option value="3">Pc Informations</option>
           </select>
 
           <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">*Text Your Query</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="textArea" class="form-label">*Text Your Query</label>
+            <textarea class="form-control" id="textArea" rows="3"></textarea>
           </div>
-          <button class="btn btn-primary">Submit</button>
+          <button class="btn btn-primary" onclick="openPopup()">Submit</button>
     </div>
 
       <footer class="container __web-inspector-hide-shortcut__">

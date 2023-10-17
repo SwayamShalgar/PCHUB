@@ -1,63 +1,9 @@
-function login(){
-    let email = document.getElementById("email").value;
-    let pass  = document.getElementById("pass").value;
-
-    let len2 = pass.length;
-    let regemail = /^\w+([\.-]?\w+)*@\w+([\.-]?w+)*(\.\w{2,3})+$/g;
-
-    if(email === "" || !regemail.test(email)){
-        // alert("Please enter correct Email");
-        alert("Please Enter correct Email !");
-    }
-    else if(len2 === 0 ){
-        alert("Please Enter Correct Password !");
-    }
-    else if(len2 < 7 ){
-        alert("Password must be greater than 7 characters !");
-    }
-    else {
-        alert("Login successful");
-        let c = confirm("Do You want to save Cookies ?")
-        if(c===true){
-        document.cookie = "email : "+email+" password : "+pass;
-    }
-    }
-}
-function signup(){
-    let pass1 = document.getElementById("signpass1").value;
-    let pass2  = document.getElementById("signpass2").value;
-    let email1 = document.getElementById("email1").value;
-    let phone = document.getElementById("phone").value;
-    let name1 = document.getElementById("name1").value;
-
-    let regemail1 = /^\w+([\.-]?\w+)*@\w+([\.-]?w+)*(\.\w{2,3})+$/g;
-    let regphone = /^\d{10}$/;
-
-    let lenpass = pass1.length;
-
-    if(email1 === "" || !regemail1.test(email1)){
-        alert("Please enter correct Email");
-    }
-
-    else if(phone === "" || !regphone.test(phone)){
-        alert("Please enter correct Phone number");
-    }
-
-    else if(name1 === ""){
-        alert("Please enter Name");
-    }
-
-    else if(lenpass < 7){
-        alert("Password must be greater than 7 characters");
-    }
-    else if(pass1 !== pass2){
-    alert("Password did'nt match !")
-    }
-
-    else{
-        alert("SignUp Successfully")
-    }
-}
+// function login(){
+//     window.open("Login.html");
+// }
+// function signup(){
+//     window.open("Login.html");
+// }
 
 var dark = document.getElementById("dark");
 var nav = document.getElementById("nav")
